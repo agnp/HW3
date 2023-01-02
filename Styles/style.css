@@ -27,7 +27,7 @@ main {
 .new-element {
     width: 50px;
     height: 50px;
-    background-color: rgb(184, 170, 170);
+    background-color: rgb(179, 177, 177);
     border: 1px solid rgb(26, 24, 24);
     border-radius: 5px;
     font-size: 12px;
@@ -43,15 +43,25 @@ main {
     box-shadow: 0 0 5px 5px rgb(0, 0, 0);
 }
 
-/* lets create separate backgrounds for classes even and odd */
+/* lets create separate backgrounds for classes */
 
-.new-element.even {
-    background-color: rgb(207, 115, 115);
+.new-element.FizzBuzz {
+    background-color: rgb(230, 26, 165);
 }
 
-.new-element.odd {
+.new-element.Fizz {
     background-color: rgb(150, 210, 168);
 }
+
+.new-element.Buzz {
+    background-color: rgb(255, 255, 0);
+}
+
+
+.new-element.other {
+    background-color: rgb(109, 180, 225);
+}
+
 
 #destroyPageButton {
     background-color: red;
