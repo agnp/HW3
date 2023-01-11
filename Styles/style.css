@@ -62,6 +62,9 @@ main {
     background-color: rgb(109, 180, 225);
 }
 
+.new-element.number {
+    background-color: rgb(109, 180, 225);
+}
 
 #destroyPageButton {
     background-color: red;
