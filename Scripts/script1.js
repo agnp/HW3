@@ -12,24 +12,46 @@ function addElement() {
     //now we add some content and some attributes to the new element
     //add a class to the new element
     newElement.classList.add("new-element"); //TODO add more classes
-    //add new class depending whether there are an odd or even number of elements
-    const numElements = parentElement.childElementCount;
-    //alternatively you could have kept the count in a variable and incremented it each time you added an element
 
-    if (numElements % 2 === 0) {
-        newElement.classList.add("even");
+    
+    const numElements = parentElement.childElementCount;
+
+
+    //alternatively you could have kept the count in a variable and incremented it each time you added an element
+for (let i = 1; i <= 100; i++) {
+    if (numElements % 3 === 0 && numElements % 5 === 0) {
+        newElement.classList.add("FizzBuzz");
+    } else if (numElements % 3 === 0) {
+        newElement.classList.add("Fizz");
+    } else if (numElements % 5 === 0) {
+        newElement.classList.add("Buzz");
     } else {
-        newElement.classList.add("odd");
+        newElement.classList.add("other");
     }
+}
     //add some text to the new element
     //lets customize this text depending on the number of elements
     //i will use ` to make a template string
     //we have have not added the element so elementCount is off by one
     //so we will correct it on the fly
     //of course we could use an if statement and use custom text for each case
-    newElement.innerText = `I'm element No. ${numElements+1}!`;
+    //newElement.innerText = `I'm element No. ${numElements+1}!`;
+    //use an if statement and use custom text for each element
+
+for (let i = 1; i <= 100; i++) { 
+    if (numElements % 3 === 0 && numElements % 5 === 0) {
+         newElement.innerText = "FIZZBUZZ";
+     } else if (numElements % 3 === 0) {
+         newElement.innerText = "FIZZ";
+     } else if (numElements % 5 === 0) {
+         newElement.innerText = "BUZZ";
+     } else {
+         newElement.innerText = `I'm element No. ${numElements+1}!`;
+     }
+}
+    
     //let's add a value attribute to the new element - not always required
-    newElement.setAttribute("value", numElements+1); //that can be used to identify the element
+    newElement.setAttribute("value", numElements); //that can be used to identify the element
 
     //lets read addRandomColor from checkbox input 
     //notice we use checked property to get the value of the checkbox as a boolean
