@@ -5,13 +5,18 @@ const container = document.getElementById("container");
 let newElement;
 
 
-//function to add 100 elements to the container
+//let's make a function to add 100 elements to the container
 function add100Elements() {
+    //get the container element
     const parentElement = document.getElementById("container");
     removeAllElements()
+    //lets make a for loop to add 100 elements with first number 1
     for (let i = 1; i <= 100; i++) {
+        //create a new element
         const newElement = document.createElement("div");
+        //set an attribute id different for each new element
         newElement.setAttribute("id", `element${i}`);
+        //add a text to the new element
         if (i % 3 === 0 && i % 5 === 0) {
             newElement.classList.add("FizzBuzz", "new-element");
             newElement.innerText = i + ' = FIZZ BUZZ';
@@ -25,7 +30,8 @@ function add100Elements() {
             newElement.classList.add("number", "new-element");
             newElement.innerText = `${i}`;
         }
-        parentElement.appendChild(newElement);
+        //finally add the new element to the container
+        parentElement.appendChild(newElement); //append adds to the end of the container element
     }
 }
 
@@ -36,18 +42,23 @@ function displayValues() {
 }
 
 
-//function to remove all elements from the container
+//let's make a function to remove all elements from the container
 function removeAllElements() {
+    //get the container element
     const parentElement = document.getElementById("container");
+    //lets make a while loop to remove all elements
     while (parentElement.lastElementChild !== null) {
+        //remove the last child
         parentElement.removeChild(parentElement.lastElementChild);
     }
 }
 
-//function to only list FIZZ elements in the container
+//let's make a function to only list FIZZ elements in the container
 function fizzElements() {
     const parentElement = document.getElementById("container");
+    //remove all existing container elements
     removeAllElements()
+    //lets make a for loop to add only fizz elements
     for (let i = 1; i <= 100; i++) {
         const newElement = document.createElement("div");
         newElement.setAttribute("id", `element${i}`);
@@ -59,7 +70,7 @@ function fizzElements() {
     }
 }
 
-//function to only list BUZZ elements in the container
+//let's make a function to only list BUZZ elements in the container
 function buzzElements() {
     const parentElement = document.getElementById("container");
     removeAllElements()
@@ -74,7 +85,7 @@ function buzzElements() {
     }
 }
 
-//function to only list fizzbuzz elements to the container
+//let's make a function to only list fizzbuzz elements to the container
 function fizzBuzzElements() {
     const parentElement = document.getElementById("container");
     removeAllElements()
@@ -90,7 +101,30 @@ function fizzBuzzElements() {
 }
 
 
-//create a function to add elements to the container from min to max number
+//let's make a function to add elements to the container with a min and max number
+// function generateElements(min, max) {
+//     const parentElement = document.getElementById("container");
+//     removeAllElements()
+//     for (min; min<=max && max<=100; min++) {
+//         const newElement = document.createElement("div");
+//         newElement.setAttribute("id", `element${min}`);
+//         if (min % 3 === 0 && min % 5 === 0) {
+//             newElement.classList.add("FizzBuzz", "new-element");
+//             newElement.innerText = min + ' = FIZZ BUZZ';
+//         } else if (min % 3 === 0) {
+//             newElement.classList.add("Fizz", "new-element");
+//             newElement.innerText = min + ' = FIZZ';
+//         } else if (min % 5 === 0) {
+//             newElement.classList.add("Buzz", "new-element");
+//             newElement.innerText = min + ' = BUZZ';
+//         } else {
+//             newElement.classList.add("number", "new-element");
+//             newElement.innerText = `${min}`;
+//         }
+//         parentElement.appendChild(newElement);
+//     }
+// }
+
 function generateElements(min, max) {
     const parentElement = document.getElementById("container");
     removeAllElements()
@@ -118,8 +152,10 @@ function generateElements(min, max) {
 
 //create a function to add elements to the container from min to max number
 function addElements() {
+    //get the min and max values from the input fields
     const min = document.getElementById("minInput").value;
     const max = document.getElementById("maxInput").value;
+    //call the generateElements function
     generateElements(min, max);
 }
 
@@ -162,9 +198,9 @@ function addListeners() {
 
 
 
-//a main function to run our code
+//let's make a main function to run our code
 function main() {
-    //add listeners to the buttons
+    //add listeners to our buttons
     addListeners();
     //add 100 elements to the container
     add100Elements();
